@@ -1,24 +1,21 @@
 # encoding: utf-8
 module Renaminator
   class Folder
-    attr_reader :media_dirs, :base_folder
-    attr_accessor :dir_hash
-    def initialize(base_folder = "media")
+    attr_reader  :base_folder
+    attr_accessor :folder_hash
+    def initialize(base_folder = "spec/media",
+                   folder_hash = Hash.new{ "folders" })
       @base_folder = base_folder
-      @media_dirs = ["tv", "movies", "music"]
-      @dir_hash = Hash.new
+      @folder_hash = folder_hash
     end
-    def get_folder_hash
-      # (/^\S*\.\S*$/)
-      media_dirs.each do |dir|
-        files = Dir.glob("spec/media/#{dir}/**/*")
-        files.shift
-        files.each do |f|
-          puts File.basename(f)
+    def get_folders
+      folders = Dir.entries("#{base_folder}") - [".", ".."]
+      folders.each do |folder|
+        files = Dir.entries("#{base_folder}/#{folder}") - [".", ".."]
+        files.each do |file|
+          folder_hash[:files] = file
         end
       end
-    end
-    def decide_media_type
     end
     def query_db_api
     end

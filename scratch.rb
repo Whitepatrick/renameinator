@@ -1,18 +1,4 @@
-Dir.mkdir('media')
-Dir.chdir('media')
-media_dirs = ["tv", "movies", "music"]
-range = (1..20)
 
-media_dirs.each do |dir|
-  Dir.mkdir(dir)
-  Dir.chdir(dir)
-  Dir.mkdir("test_media_dir")
-  Dir.chdir("test_media_dir")
-  range.each do |a|
-    File.new("new_#{a}.file", "w+")
-  end
-  Dir.chdir("../../")
-end
 =begin
 class Renaminator
   attr_reader :series, :season, :episode

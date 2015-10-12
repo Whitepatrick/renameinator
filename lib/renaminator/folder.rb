@@ -6,15 +6,16 @@ module Renaminator
     def initialize(base_folder = "media")
       @base_folder = base_folder
       @media_dirs = ["tv", "movies", "music"]
-      dir_hash = Hash.new
+      @dir_hash = Hash.new
     end
-    # gets local path and file info of folder
-    # decide if destination is movie, tv, or music
-    # query db for file info
-    # create media object (factory?)
     def get_folder_hash
+      # (/^\S*\.\S*$/)
       media_dirs.each do |dir|
-        Dir[dir + "/**/*"]
+        files = Dir.glob("spec/media/#{dir}/**/*")
+        files.shift
+        files.each do |f|
+          puts File.basename(f)
+        end
       end
     end
     def decide_media_type
@@ -22,7 +23,6 @@ module Renaminator
     def query_db_api
     end
     def make_info_object
-      get_folder_hash.each { |key, value| puts "#{key} is #{value}" }
     end
   end
 end

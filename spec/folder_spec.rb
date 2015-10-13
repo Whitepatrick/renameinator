@@ -14,8 +14,11 @@ RSpec.describe Renaminator::Folder do
     end
   end
 
-  describe '.get_folders' do
-    it 'gets folders and files'
+  describe '.get_folder_hash' do
+    it 'gets hash with folders and files' do
+      folder = Renaminator::Folder.new
+      folder.get_folder_hash.each {|f| puts f}
+    end
   end
 
   describe '.make_info_object' do

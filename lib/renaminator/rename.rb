@@ -7,8 +7,7 @@ module Renaminator
     # renames files
     # store info into DB (optional)
     def remove_junk(folder)
-      folder.delete("*.nfo")
-      puts folder
+      folder
     end
     def rename_files
     end

@@ -8,13 +8,10 @@ module Renaminator
       @base_folder = base_folder
       @folder_hash = folder_hash
     end
-    def get_folders
-      folders = Dir.entries("#{base_folder}") - [".", ".."]
-      folders.each do |folder|
-        files = Dir.entries("#{base_folder}/#{folder}") - [".", ".."]
-        files.each do |file|
-          folder_hash[:files] = file
-        end
+    def get_folder_hash
+      dir = Dir.new("#{base_folder}")
+      dir.each do |d|
+        folder_hash["#{d}"] = ""
       end
     end
     def query_db_api

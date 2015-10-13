@@ -9,9 +9,8 @@ module Renaminator
       @folder_hash = folder_hash
     end
     def get_folder_hash
-      dir = Dir.new("#{base_folder}")
-      dir.each do |d|
-        folder_hash["#{d}"] = ""
+      Find.find(base_folder) do |path|
+        folder_hash[:folders] = path if path =~ /.*\.file$/
       end
     end
     def query_db_api

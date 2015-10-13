@@ -17,7 +17,7 @@ RSpec.describe Renaminator::Folder do
   describe '.get_folder_hash' do
     it 'gets hash with folders and files' do
       folder = Renaminator::Folder.new
-      folder.get_folder_hash.each {|f| puts f}
+      p folder.get_folder_hash.class
     end
   end
 

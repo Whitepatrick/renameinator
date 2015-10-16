@@ -1,4 +1,11 @@
-
+files = Dir.glob("lib/renaminator/media/**/*")
+file_array = []
+file_hash = {}
+files.each do |file|
+  file_array << File.split(file)
+  hash["#{file_hash}"] = Hash[file_array.each_slice(2).to_a]
+end
+puts file_array
 =begin
 class Renaminator
   attr_reader :series, :season, :episode

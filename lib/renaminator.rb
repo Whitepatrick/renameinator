@@ -1,8 +1,9 @@
 # encoding: utf-8
-require 'find'
+require 'net/scp'
 require "./lib/renaminator/folder"
 require "./lib/renaminator/rename"
 require "./lib/renaminator/scp"
+require "./lib/globals"
 
 module Renaminator
 

@@ -1,21 +1,16 @@
 # encoding: utf-8
 module Renaminator
   class Rename
-    attr_reader :series, :season, :episode
-    attr_accessor :destination#, :file_names
+
+    attr_reader :folder_path
+    attr_accessor :destination
     def initialize(destination)
       @destination = destination
-      #@file_names = Dir.glob("media/#{destination}/*")
-
-      @series = "Show_show"
-      @season = "2"
-      @episode = "13"
+      @folder_path = "media/#{destination}"
     end
 
     def rename
-      puts "Renaming TV files..."
-
-      folder_path = "media/#{destination}"
+      puts "Renaming #{destination} files..."
       Dir.glob("#{folder_path}/*").sort.each do |f|
         filename = "Edit_#{File.basename(f, File.extname(f))}_S0E01"
         File.rename(f, "#{folder_path}/#{filename}")
@@ -28,8 +23,3 @@ end
 
 ren = Renaminator::Rename.new("cool_show")
 ren.rename
-=begin
-#filename = File.basename(f, File.extname(f))
-file_name = "#{series}_S#{season}E#{episode}#{File.extname(f)}"
-File.rename(f, "#{folder_path}/#{file_name}")
-=end

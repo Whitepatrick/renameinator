@@ -21,5 +21,5 @@ module Renaminator
   end
 end
 
-ren = Renaminator::Rename.new("cool_show")
-ren.rename
+#ren = Renaminator::Rename.new("cool_show")
+#ren.rename

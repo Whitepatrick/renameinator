@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'rspec'
+gem 'fakefs'
+gem 'net-scp'
 gem 'rspec-support'
 gem 'rspec-mocks'
 gem 'simplecov'

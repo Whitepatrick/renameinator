@@ -1,5 +1,8 @@
+require 'fileutils'
 Dir.mkdir("media")
 Dir.chdir("media")
+FileUtils.touch("file.nfo")
+FileUtils.touch("file.txt")
 Dir.mkdir("cool_show")
 Dir.chdir("cool_show")
 range = (1..20)

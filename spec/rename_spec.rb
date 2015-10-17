@@ -2,11 +2,10 @@
 require './spec/spec_helper'
 
 RSpec.describe Renaminator::Rename do
-
   describe '.remove_junk' do
-    it "should take out the junk files of a file array"
+    it "gets folder object from Folder"
   end
   describe ".rename_files" do
-    it "should take an array of "
+    it "should take an hash object with array values"
   end
 end

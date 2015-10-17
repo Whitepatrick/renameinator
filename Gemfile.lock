@@ -3,7 +3,11 @@ GEM
   specs:
     diff-lcs (1.2.5)
     docile (1.1.5)
+    fakefs (0.6.7)
     json (1.8.3)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.1)
     rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
@@ -31,6 +35,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fakefs
+  net-scp
   rake
   rspec
   rspec-mocks
@@ -38,3 +44,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-commands-rspec
+
+BUNDLED WITH
+   1.10.6

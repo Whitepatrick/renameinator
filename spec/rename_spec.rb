@@ -5,8 +5,5 @@ module Renaminator
     describe '.rename' do
       it "renames an array of files"
     end
-    describe ".rename_files" do
-      it "should take an hash object with array values"
-    end
   end
 end

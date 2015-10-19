@@ -1,10 +1,7 @@
-require './lib/renaminator'
-module Renaminator
-  class Scratch
-
-    def 
-
-  end
+files = Dir.glob("media/cool_show/*")
+files.each do |file|
+  array = file.scan(/\d/).sort!
+  puts array
 end
 
 =begin

@@ -7,6 +7,15 @@ module Renaminator
   end
 end
 =begin
+
+base_path = "media"
+folder = Folder.new
+folders = folder.get_dir_entries("#{base_path}")
+files = folder.get_dir_entries("#{base_path}/#{files}")
+files.each do |file|
+  FileUtils.mv(file, "edit_#{file}_.file")
+end
+
 files.sort.each do |f|
   filename = "Edit_#{File.basename(f, File.extname(f))}_S0E01"
   File.rename("media/#{f}", "media/#{filename}")

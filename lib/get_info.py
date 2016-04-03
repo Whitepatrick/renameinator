@@ -1,10 +1,11 @@
 import imdb
 import json
 
-def get_top_five(search_term):
+def search_for_title(search_term):
     ia = imdb.IMDb()
     s_result = ia.search_movie(search_term)
-    top_five = s_result[0:5]
+    return s_result[0:5]
 
-    for result in top_five:
+def select_title(results):
+    for result in results:
         print result['long imdb canonical title'], result.movieID

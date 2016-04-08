@@ -11,9 +11,8 @@ def begin(args):
     movie_id = raw_input()
     return movie_id
 
-def 
-
 if len(sys.argv) < 3:
     print "\nYou're missing somthing..\n\nPlease use like this:\n$ python renamer.py 'search title' /file/path\n\n"
 else:
     begin(sys.argv)
+    pf.parse_files(sys.argv[2])

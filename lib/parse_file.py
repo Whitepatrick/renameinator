@@ -9,5 +9,5 @@ def get_file_names(path):
     return file_names
 
 for f in get_file_names('../Martin/season_01'):
-    found = re.search(season_episode, f)
-    print found.keys
+    info = map(tuple, re.findall(season_episode, f))
+    print info

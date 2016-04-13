@@ -16,3 +16,9 @@ if len(sys.argv) < 3:
 else:
     begin(sys.argv)
     pf.parse_files(sys.argv[2])
+
+
+#file_names = map(str, os.listdir(path))
+#for f in file_names:
+#gfn = get_file_names('../Martin/season_01')
+#print gfn

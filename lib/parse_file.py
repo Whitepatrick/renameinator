@@ -1,18 +1,15 @@
 import os
 import re
 
-path = "/home/pwhite/workspace/renameinator/fake_shows/Martin/season_01"
-file_blob = os.listdir(path)
-season_and_ep = re.compile("(([0-9]{4,})|([0-9]{2,}))|(mkv|MKV|avi|AVI|mpeg|MPEG|mpg|MPG|mp4|MP4)")
 
-def get_file_names(file_name):
-    ep_info = map(tuple, re.findall(season_and_ep, str(file_name)))
-    return ep_info
+re_file_ints = re.compile('[0-9]')
+re_extension = re.compile('(mkv|avi|mpeg|mpg|mp4)$')
 
-for f in get_file_names(file_blob):
-    f = filter(None, f)
-    print f
+def get_file_info(file_name):
+    season = map(int, re.findall(re_file_ints, str(file_name)))
+    file_ext = map(str, re.findall(re_extension, str(file_name)))
+    return season, file_ext
 
-
-
-#season_episode = re.compile("((S[0-9]{2,})|(E[0-9]{2,}))|(S[0-9]{2,})|(E[0-9]{2,})|((.[0-9]{2,})|(.[0-9]{2,}))|(.[0-9]{2,})|([0-9]{4,})|([0-9]{2,})")
+def split_file_info(file_info):
+    if len(file_info) < 3:
+        return episode

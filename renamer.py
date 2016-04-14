@@ -1,4 +1,5 @@
 import sys
+import os
 import lib.get_info as gi
 import lib.parse_file as pf
 
